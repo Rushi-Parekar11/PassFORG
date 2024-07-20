@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"/>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>PassFORG Responsive</title>
+  </head>
+  <body>
+    <div class="all">
+    <div class="navbar" style="position: sticky;top: 1px;">
+      <h2 id="logo">PassFORG</h2>
+
+      <svg xmlns="http://www.w3.org/2000/svg" id="log" style="color: white" width="18" height="20" fill="currentColor" class="bi bi-sun-fill"viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+      </svg>
+
+      <div class="mode">
+        <div class="circle" onclick="modeon()"></div>
+      </div>
+    </div>
+
+    <div class="maincon">
+      <div class="boxcon">
+        <div class="inpBtn" style="display: flex; align-items: center; justify-content: center">
+          <input type="text" readonly class="inpmain" />
+          <button class="cpbtnn" id="copyButton" onclick="copytxt() ">Copy</button>
+        </div>
+
+        <div class="allstrip"  style="  height: 60px;  width:100%;  margin-bottom: -80px;  margin-top: 30px;display: flex;align-items: center;justify-content: space-around;">
+
+          <div onmouseover="rotateIcon(this)"  onmouseleave="resetIcon(this)"  class="icon"  style="transition: transform 0.9s ease">
+            <svg xmlns="http://www.w3.org/2000/svg"  onclick="reload()"  fill="currentColor"  class="bi bi-arrow-repeat"  viewBox="0 0 16 16"  >
+              <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+              <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"  />
+            </svg>
+          </div>
+
+          <div style="display: flex;align-items: center; " class="yyy">
+            <input type="range" nstyle="border: none" name="sss" id="pi_input" max="15" min="1" />
+            <h6 class="topp" style="color: white; border: none;margin-left:6px;">Length:<output id="value"></output></h6>
+          </div>
+
+          <div class="shell" style="display: flex; align-items: center; gap: 10px;justify-content: center;border: 1px solid none;" >
+            <span style="display: flex;align-items: center;gap: 10px;"><input class="topb" type="checkbox" onclick="numfun()" style="height: 17px; width: 17px; margin-left: 20px" id="numck"/>
+            <h6 class="topa" style="margin-left: -6px; margin-top: 4px; color: white"> Numbers </h6></span>
+
+            <span class="ggg" style="display: flex;align-items: center;justify-content: center;gap: 10px;"><input type="checkbox" onclick="charfun()" style="height: 17px; width: 17px; margin-left: 20px" id="charck" value=""/>
+            <h6 class="topb" style="margin-left: -6px; margin-top: 4px;color: white;">Character</h6></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 100vw; height: 1px; background-color: rgb(36, 36, 36)" class="line"></div>
+    <div class="spacefy" style="height: 10vh;width: 100vw;background-color: black;"></div>
+
+
+      <div class="logocon" style="background-color: black;" >
+      <div class="container" >
+         <!-- lock -->
+        <div class="item">
+          <svg xmlns="http://www.w3.org/2000/svg" id="iconfy" style="color: white" width="50" height="50" fill="currentColor" class="bi bi-unlock" viewBox="0 0 16 16">
+            <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2M3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z"/>
+          </svg>
+          <h4 class="ccc">Complex</h4>
+          The longer a password, the more secure it is. A strong password should
+          be at least 10 characters long.
+        </div>
+
+          <!-- key -->
+        <div class="item">
+          <svg xmlns="http://www.w3.org/2000/svg" id="iconsy" style="color: white" width="50" height="50" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+            <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/>
+            <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+          </svg>
+          <h4 class="ccc">Long</h4>
+          Strong passwords use a combination of letters, numbers and symbols to
+          form an unpredictable that doesn't resemble words or names.
+        </div>
+
+           <!-- shield -->
+        <div class="item">
+          <svg xmlns="http://www.w3.org/2000/svg" id="iconty" style="color: white" width="50" height="50" fill="currentColor" class="bi bi-shield-shaded" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 14.933a1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+          </svg>
+          <h4 class="ccc">Secure</h4>
+          The password are generated by help of random keyword So that password
+          not stored any database from Our side.
+        </div>
+
+         <!-- men -->
+        <div class="item">
+          <svg xmlns="http://www.w3.org/2000/svg" id="iconff" style="color: white" width="50" height="50" fill="currentColor" class="bi bi-incognito" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="m4.736 1.968-.892 3.269-.014.058C2.113 5.568 1 6.006 1 6.5 1 7.328 4.134 8 8 8s7-.672 7-1.5c0-.494-1.113-.932-2.83-1.205l-.014-.058-.892-3.27c-.146-.533-.698-.849-1.239-.734C9.411 1.363 8.62 1.5 8 1.5s-1.411-.136-2.025-.267c-.541-.115-1.093.2-1.239.735m.015 3.867a.25.25 0 0 1 .274-.224c.9.092 1.91.143 2.975.143a30 30 0 0 0 2.975-.143.25.25 0 0 1 .05.498c-.918.093-1.944.145-3.025.145s-2.107-.052-3.025-.145a.25.25 0 0 1-.224-.274M3.5 10h2a.5.5 0 0 1 .5.5v1a1.5 1.5 0 0 1-3 0v-1a.5.5 0 0 1 .5-.5m-1.5.5q.001-.264.085-.5H2a.5.5 0 0 1 0-1h3.5a1.5 1.5 0 0 1 1.488 1.312 3.5 3.5 0 0 1 2.024 0A1.5 1.5 0 0 1 10.5 9H14a.5.5 0 0 1 0 1h-.085q.084.236.085.5v1a2.5 2.5 0 0 1-5 0v-.14l-.21-.07a2.5 2.5 0 0 0-1.58 0l-.21.07v.14a2.5 2.5 0 0 1-5 0zm8.5-.5h2a.5.5 0 0 1 .5.5v1a1.5 1.5 0 0 1-3 0v-1a.5.5 0 0 1 .5-.5"/>
+          </svg>
+          <h4 class="ccc">Unique</h4>
+          A strong password should be unique to each account to reduce
+          vulnerability in the event of a hack.
+        </div>
+    </div>
+  </div>
+
+
+
+  <div class="jstone"></div>
+
+
+
+  <div class="imgcon" >
+
+  <div class="secfy" >
+    <h1 class="mmm" >PassFORG</h1>
+    <p class="cnn">
+      <span style="color: orange">Welcometo PassFORG! </span> Generate
+      strong, random passwords for enhanced security and peace of mind. Use
+      our tool to create unique passwords that can be used anywhere,
+      ensuring your online accounts remain protected. Trust PassForge for
+      all your password generation needs!</p>
+  </div>
+
+
+  <div class="secsy">
+    <div class="imgg"><img src="941 black.png" alt="load nahi ho rahi bhai!" class="responsive-img" /></div>
+    <hr style="color: white" />
+  </div>
+</div>
+    </div>
+
+
+
+    <div class="footercon" style="display: flex;flex-direction: column;">
+      <div class="one">
+         <div style="display: flex;align-items: center;flex-direction: column;;height: 20vh;width: 30vw;">
+         <p class="vvc" >PassFORG</p>
+         <p class="vva" >PassFORG© 2024 reserve all Rights</p>
+           <p class="vvb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MADE IN INDIA
+             <img class="vvw" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAk1BMVEXxWyUAaTT////wSAAAWQ4sLG8qKm719fgAAFsoKG0AAGK8vM4AAGAAAFkYGGcAAF4hIWoeHmns7PJ+fqHS0t3f3+gAAFXNzdp1dZtxcZnm5u0NDWQGBmOxscb09PcXF2dlZZGcnLbAwNFTU4aTk7BKSoHR0d6Li6oyMnM8PHlbW4urq8B8fKC5uc5iYo9OToNBQXxTh9s/AAAGPUlEQVR4nO2bW5eiOBRGazITw12uAqKIiGCJVtX//3WTgG1X1+muNf2SVI/fXkvk4kPY5p6TpycAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA3+Rv8JEnBj4CJ5Sv4ERk7r5LyqTbu5kwnRj2BZys94eg2gVRGIZRsKuCw35tOklmnYjx6ET2gn9nYQfOcTSbW4w62Yc7W3mIbB5sNpuA25HyY+/CvclkGXTingJlIHKeu1drG8fxaL12z06kLAUn11zCjDkR50oaCcNgXwsWt4z1jLUxE/U+CENppTobK0CmnKS2fHG7ujQnwfLpznU69kycmktlK12pobQZctKqt46O/Xwx5YipChHtdCc/RspYayZxZpxsnQVfhAWLY3UVb9VxmB7MN2JWhPIXztZI6ow4ab0Ft21PWphfulSH4n6m7g6ebfOF15pIngkn6UYWjFOcydNsal5KVXgO8lNPTtzpSXySNU5lok4x4EQsbKkkmy8mHXtl5iQ/rqpURDE/yt7k7xYGWh8DTs4hX5xi1k4X60Ye8hd52MjPi2qCmrlz77KYL3h41p9A/U62lWxnPVmXdtNl08qcsRRM+GL6Zm0z3ZdPY0+VHv31rHYnQnbfozJRZ40qF2tPHmWvNV7Fsmcr7zrr+7OkjGTHX3vp0e6kk6Oa1/m0flYtbyGrj6JhmZ+xppgvWfxczz95lSOhTncSdTup5RinSuP5Yu3Imna9ytlosd7vmTWyfCWzSebc5gvitJJjn1pzGnU72Qc8vMhe2vzSqdXKnLFT37mVt1bKdjKbqG9FNsbsEvJA9yBZt5Nnm4eqdGwvU15pVyNbLxNWlfkyLyuWLNdsXLXq0bpUtWsRcvtZcxo1O1Hdtd30jvW5UFbGVceKZXoOUysNz+myYJ3UJEtNeZiKzCngfKO546bZyRDJonBrSK5eolpkv4i9pvVSq/faxosLX7XCl+WtCRb7iEeD3kRqdiK7ptW9ba0bX1q5WInrZ5vUSavMdxPrwtaJ39zr1bri9pveROp1IjxuH0Xe3tod5joyrwyrazIM7aEdhuS6GuLEc75NstV5L6RGT28XRa8T2bRGshUR26bc5+pFRbl08tZPj31SJukx9dvcWU5jIJHvi3Irz7pI90hQr5Ot7LDNdWe9PVu8HFOWn/0hO4xRFIbReMgG/5yzfiz58sWdckd9kN02vf17vU7kf879b396fX2xrM3BTZPXcbNQbMbXJHUPG8u6CZGkPueR3q6sXidJyHfvJ+TFtQm8auh3t9WdXT9UXtC47+sPd8fDRGsq9TopQ+58e18h4izN87RPr1LVTJhc076XN7P4rkU4PCy1plKvkxfZhtT9dT8Uh9PGX/m+tVTFp7RvTuxSFZyl5ctnm9M56cY2rR1uv2hNpbl8wn6WTy6Pl09IfeKiPkG7QyH9k561t/5JeO+ftCx9pP6J6sd2Sgj6sXfUeOcN450f+XRcvPnZuFjIcfFRbyL1z59Evz9/onmW2sA8W6BW/D7Msx0+nWfL9CbyT5iP1Tyl9CXm7YN38/bBh3n74gHm7dUyYNX/5/WdvjKwEGh+HbC8/LgOqMY293XA4yOsAzIRLnhUqJn423qxaptP7ff14s339eKhiPgi/P+vFyOu4GdM8Sc1m/uqn8Wf1KdHiT+Z45SeP4lTus2WPFKcEutV6TnFKjv8Op5tPcWz6V4WnUDcI8VUfCyXDUrJ4qnJjacQ6nfxsXWsZik5f6T42Hsc9RxV/os46kVlaB/CV4i3nyPMHz7eftqXYc/7MsQP+zLEvC/Drs66Q7bumNy/w2/7d167V+sqYnG15Nlt/w5/xP07ii4M1GqXHdl852ycYDqT10GofYzzHtP7Ad/IfsDIeXvk/YCKrDvu3u0b3R07zbNqFONOGPYX/wnACeXpH/CRp7/AR+CEAicUOKHACQVOKHBCgRMKnFDghAInFDihwAkFTihwQoETCpxQ4IQCJxQ4ocAJBU4ocEKBEwqcUOCEAicUOKHACQVOKHBCgRMKnFDghAInFDihwAkFTihwQoETCpxQ4IQCJxQ4ocAJBU4ocEKBEwqcUOCEAicUOKHACQVOKHBCgRMKnFDghAInFDih/AsVK00pCVbJdAAAAABJRU5ErkJggg==" alt=""/> </p>
+     
+         <a style="color: inherit; margin-left: 0px" href="https://www.linkedin.com/in/rushikesh-parekar-96a94a274/?originalSubdomain=in">
+             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+               </svg>
+             </a>
+             
+ 
+             <a style="color: inherit;" href="https://github.com/Rushi-Parekar11">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                   </svg>
+             </a>
+         </div>
+     </div>
+     </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    <script>
+      const valueOutput = document.querySelector("#value");
+      const rangeInput = document.querySelector("#pi_input");
+      const val = document.querySelector(".inpmain");
+      let numckk = document.querySelector("#numck");
+      function createPassword(length) {
+        const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+        let allCharacters = upperLetters + lowerLetters;
+        let password = "";
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * allCharacters.length);
+          password += allCharacters[randomIndex];
+        }
+        return password;
+      }
+
+      function setupPasswordGenerator() {
+        const initialLength = 6;
+        rangeInput.value = initialLength;
+        valueOutput.textContent = initialLength;
+        const initialPassword = createPassword(initialLength);
+        val.value = initialPassword;
+        rangeInput.addEventListener("input", (event) => {
+          const length = event.target.value;
+          valueOutput.textContent = length;
+          const generatedPassword = createPassword(length);
+          val.value = generatedPassword;
+        });
+      }
+      setupPasswordGenerator();
+    </script>
+
+    <script>
+      const copyButton = document.querySelector("#copyButton");
+      const copyMessage = document.querySelector("#copyMessage");
+      function reload() {
+        let vala = document.querySelector(".icon");
+        vala.style.color = "red";
+        location.reload();
+      }
+      function rotateIcon(element) {
+        element.classList.add("rotate-90");
+      }
+      function resetIcon(element) {
+        element.classList.remove("rotate-90");
+      }
+
+      function copytxt() {
+        var cop = document.querySelector(".inpmain");
+        cop.select();
+        document.execCommand("copy");
+        showCopiedMessage();
+
+        function showCopiedMessage() {
+          copyMessage.textContent = "Copied!";
+          setTimeout(() => {
+            copyMessage.textContent = "";
+          }, 1000);
+        }
+      }
+    </script>
+  </body>
+</html>
